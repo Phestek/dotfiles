@@ -1,0 +1,44 @@
+[options]
+allow_bold = false
+audible_bell = false
+browser = firefox
+clickable_url = true
+cursor_blink = true
+cursor_shape = block
+dynamic_title = false
+filter_unmatched_urls = true
+font = Operator Mono Book 11.5
+fullscreen = false
+geometry = 80x24
+icon_name = Terminal
+modify_other_keys = false
+mouse_autohide = true
+scrollback_lines = 5000
+scroll_on_keystroke = true
+scroll_on_output = false
+search_wrap = true
+size_hints = true
+urgent_on_bell = true
+
+[colors]
+foreground      = #c0c6cb
+foreground_bold = #c0c6cb
+cursor          = #c0c6cb
+background      = #14171a
+color0  = #14171a
+color8  = #14171a
+color1  = #ee6a6a
+color9  = #ee6a6a
+color2  = #8198b9
+color10 = #8198b9
+color3  = #ffbb66
+color11 = #ffbb66
+color4  = #256f94
+color12 = #256f94
+color5  = #b46896
+color13 = #b46896
+color6  = #4fafaf
+color14 = #4fafaf
+color7  = #c0c6cb
+color15 = #c0c6cb
+

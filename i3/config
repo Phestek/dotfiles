@@ -1,0 +1,95 @@
+font pango:Operator Mono 11.5
+
+set             $bground        #14171A
+set             $fground        #C0C6CB
+set             $light_grey     #1d171A
+set             $green          #256F94
+
+set             $mod            Mod4
+
+floating_modifier $mod
+
+bindsym         $mod+Return     exec    termite
+bindsym         $mod+q          kill
+bindsym         $mod+r          exec    rofi -show drun
+
+bindsym         $mod+h          focus   left
+bindsym         $mod+Shift+h    move    left
+bindsym         $mod+Ctrl+h     resize  shrink  width   10px
+bindsym         $mod+j          focus   down
+bindsym         $mod+Shift+j    move    down
+bindsym         $mod+Ctrl+j     resize  grow    height  10px
+bindsym         $mod+k          focus   up
+bindsym         $mod+Shift+k    move    up
+bindsym         $mod+Ctrl+k     resize  shrink  height  10px
+bindsym         $mod+l          focus   right
+bindsym         $mod+Shift+l    move    right
+bindsym         $mod+Ctrl+l     resize  grow    width   10px
+
+bindsym         $mod+d          floating toggle
+bindsym         $mod+f          fullscreen toggle
+
+bindsym         $mod+c          split   v
+bindsym         $mod+v          split   h
+
+#bindsym         $mod+space      focus   mode_toggle
+#bindsym         $mod+a          focus   parent
+#bindsym         $mod+d          focus   child
+
+bindsym         $mod+1          workspace   1
+bindsym         $mod+2          workspace   2
+bindsym         $mod+3          workspace   3
+bindsym         $mod+4          workspace   4
+bindsym         $mod+5          workspace   5
+bindsym         $mod+6          workspace   6
+bindsym         $mod+7          workspace   7
+bindsym         $mod+8          workspace   8
+bindsym         $mod+9          workspace   9
+bindsym         $mod+0          workspace   10
+bindsym         $mod+Shift+1    move container to workspace 1
+bindsym         $mod+Shift+2    move container to workspace 2
+bindsym         $mod+Shift+3    move container to workspace 3
+bindsym         $mod+Shift+4    move container to workspace 4
+bindsym         $mod+Shift+5    move container to workspace 5
+bindsym         $mod+Shift+6    move container to workspace 6
+bindsym         $mod+Shift+7    move container to workspace 7
+bindsym         $mod+Shift+8    move container to workspace 8
+bindsym         $mod+Shift+9    move container to workspace 9
+bindsym         $mod+Shift+0    move container to workspace 10
+
+bindsym         $mod+Shift+c    reload
+bindsym         $mod+Shift+r    restart
+bindsym         $mod+Shift+e    exit
+
+new_window      pixel   2
+new_float       pixel   2
+gaps            inner   4
+gaps            outer   0
+
+# colorclass                border          bground     text        indic           child_border
+client.focused              $green          $bground    $fground    $green          $green
+client.focused_inactive     $light_grey     $bground    $fground    $light_grey     $light_grey
+client.unfocused            $light_grey     $bground    $fground    $light_grey     $light_grey
+client.urgent               $light_grey     $bground    $fground    $light_grey     $light_grey
+client.placeholder          $light_grey     $bground    $fground    $light_grey     $light_grey
+client.background           $light_grey     $bground    $fground    $light_grey     $light_grey
+
+bar {
+    status_command  i3status
+    position        bottom
+    tray_output     none
+    colors {
+        background          $bground
+        statusline          $fground
+        focused_workspace   $bground $bground $green
+        active_workspace    $bground $bground $fground
+        urgent_workspace    $bground $bground $fground
+        inactive_workspace  $bground $bground $fground
+    }
+}
+
+# Autostart.
+exec            feh --bg-tile pictures/grey_linen.jpg
+exec            setxkbmap pl
+exec            numlockx
+
